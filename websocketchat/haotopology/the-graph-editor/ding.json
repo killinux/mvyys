@@ -1,0 +1,76 @@
+{
+ 
+
+"processes":{ 
+       "network111":{
+            "component":"network111",
+            "metadata":{
+                "type":"cloud",
+                "vm_id":"network111",
+                "vm_status":"TRUE",
+                "x":10,
+                "y":50,
+                "width":72,
+                "label":"网络"
+            }
+        },
+
+        "vm/00001":{
+            "component":"vm/00001",
+            "metadata":{
+            	"type":"server",
+                "vm_id":"00001",
+                "vm_status":"ERROR",
+                "x":120,
+                "y":561,
+                "width":72,
+                "label":"连接1"
+            }
+        },
+        "vm/00002":{
+            "component":"vm/00002",
+            "metadata":{
+                "type":"mobile",
+                "vm_id":"00002",
+                "vm_status":"TRUE",
+                "x":120,
+                "y":361,
+                "width":72,
+                "label":"连接2"
+            }
+        }
+        
+    },
+    "connections":[
+    	{
+            "src":{
+                "process":"network111",
+                "port":"out"
+            },
+            "tgt":{
+                "process":"vm/00001",
+                "port":"in"
+            },
+	        "metadata":{
+		        "route": "7"
+            }
+           
+        },
+        {
+            "src":{
+                "process":"network111",
+                "port":"out"
+            },
+            "tgt":{
+                "process":"vm/00002",
+                "port":"in"
+            },
+            "metadata":{
+                "route": "7"
+            }
+           
+        }
+
+    ]
+}
+

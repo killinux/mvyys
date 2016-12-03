@@ -1,0 +1,16 @@
+var create_vm1=function(){
+      var id = Math.random().toString(36).substr(2)
+      x_distance=x_distance+distance;
+      y_distance=y_distance+distance;
+      var component =id;
+      var metadata = {
+        type:"mobile",
+        vm_id:id,
+        label: "label",
+        x: x_distance,
+        y: y_distance
+      };
+      editor.nofloGraph.addNode(id, component, metadata);
+      var meta = { route: Math.floor(Math.random()*10) };
+      editor.nofloGraph.addEdge("network111", "port1", id,"port2", meta);
+    }    
